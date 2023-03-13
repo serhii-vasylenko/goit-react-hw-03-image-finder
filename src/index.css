@@ -74,7 +74,9 @@ img {
 }
 
 .SearchForm-button {
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 48px;
   height: 48px;
   border: 0;
@@ -125,7 +127,7 @@ img {
  */
 .ImageGallery {
   display: grid;
-  max-width: calc(100vw - 48px);
+  max-width: calc(100vw - 64px);
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   grid-gap: 16px;
   margin-top: 0;

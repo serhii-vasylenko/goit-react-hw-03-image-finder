@@ -5,7 +5,7 @@ import { Backdrop, Content } from './Modal.styled';
 
 const modalRoot = document.querySelector('#modal-root');
 
-class Modal extends Component {
+export class Modal extends Component {
   componentDidMount() {
     window.addEventListener('keydown', this.habdleEscPress);
   }
@@ -27,13 +27,12 @@ class Modal extends Component {
   };
 
   render() {
+    const {item: {largeImageURL, tags}} = this.props;
     return createPortal(
       <div onClick={this.handleBackdropClick} className='Overlay'>
-        <div className='Modal'>{this.props.children}</div>
+        <img src={largeImageURL} alt={tags} width='800'/>
       </div>,
       modalRoot
     );
   }
 }
-
-export default Modal;
