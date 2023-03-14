@@ -73,7 +73,7 @@ export class Dashboard extends Component {
     const { images, loading, totalHits, page, showModal, modalImage } = this.state;
     const totalPages = Math.ceil(totalHits / 12);
     return (
-      <>
+      <div className='Dashboard'>
         <Searchbar onSubmit={this.hadleFormSubmit} />
         <ImageGallery images={images} onShowModal={this.onShowModal} />
         {loading && <Loader />}
@@ -93,7 +93,7 @@ export class Dashboard extends Component {
           pauseOnHover
           theme="colored"
         />
-      </>
+      </div>
     );
   }
 }
