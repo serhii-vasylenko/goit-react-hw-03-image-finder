@@ -11,7 +11,7 @@ import { Button } from 'components/Button/Button';
 import { Modal } from 'components/Modal/Modal';
 
 
-export class App extends Component {
+export class Dashboard extends Component {
   state = {
     query: '',
     images: [],
@@ -32,7 +32,6 @@ export class App extends Component {
   }
 
   hadleFormSubmit = query => {
-    console.log(query);
     this.setState({ query, images: [], page: 1 });
   };
 
@@ -73,7 +72,6 @@ export class App extends Component {
   render() {
     const { images, loading, totalHits, page, showModal, modalImage } = this.state;
     const totalPages = Math.ceil(totalHits / 12);
-    // console.log(modalImage);
     return (
       <>
         <Searchbar onSubmit={this.hadleFormSubmit} />

@@ -12,9 +12,7 @@ export async function fetchImages(query, page) {
     });
 
     const uri = `${BASE_URI}/?${params}&q=${encodeURIComponent(query)}`;
-    console.log(uri);
 
     const response = await axios.get(uri);
-    console.log(response);
     return response.data;
 }
