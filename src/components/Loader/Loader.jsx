@@ -1,4 +1,3 @@
-// import PropTypes from 'prop-types';
 import { Dna } from 'react-loader-spinner';
 
 export const Loader = () => {

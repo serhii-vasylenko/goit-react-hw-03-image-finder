@@ -1,7 +1,9 @@
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+
+import { Header, Form, SearchButton, Input } from 'components/Searchbar/Searchbar.styled';
 
 export class Searchbar extends Component {
   state = {
@@ -27,14 +29,13 @@ export class Searchbar extends Component {
   render() {
     return (
       <>
-        <header className="Searchbar">
-          <form className="SearchForm" onSubmit={this.handleSubmit}>
-            <button type="submit" className="SearchForm-button">
+        <Header>
+          <Form onSubmit={this.handleSubmit}>
+            <SearchButton type="submit" className="button">
               <span className="Button-label">Search</span>
-            </button>
+            </SearchButton>
 
-            <input
-              className="SearchForm-input"
+            <Input
               type="text"
               autoComplete="off"
               autoFocus
@@ -42,9 +43,13 @@ export class Searchbar extends Component {
               onChange={this.handleQueryChange}
               value={this.state.query}
             />
-          </form>
-        </header>
+          </Form>
+        </Header>
       </>
     );
   }
 }
+
+Searchbar.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+};
