@@ -23,11 +23,17 @@ export class Dashboard extends Component {
   };
 
   componentDidUpdate(prevProps, prevState) {
-    if (
+      if (
       this.state.query !== prevState.query ||
       this.state.page !== prevState.page
     ) {
       this.fetch();
+    }
+
+    if (this.state.query !== prevState.query) {
+      setTimeout(() => {
+        toast.info(`We found ${this.state.totalHits} images!`)
+      },500)
     }
   }
 
@@ -45,10 +51,7 @@ export class Dashboard extends Component {
         images: [...images, ...hits],
         totalHits,
       }));
-
-      if (totalHits === 0) {
-        toast.error('Please, try again!');
-      }
+      
     } catch (error) {
     } finally {
       this.setState({ loading: false });

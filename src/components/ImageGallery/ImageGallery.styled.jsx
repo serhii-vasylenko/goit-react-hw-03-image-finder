@@ -7,7 +7,15 @@ export const List = styled.ul`
   grid-gap: 16px;
   margin-top: 0;
   margin-bottom: 0;
-  padding: 8px 108px;
+  padding: 8px;
   margin-left: auto;
   margin-right: auto;
+
+  @media screen and (max-width: 767px){
+    overflow: hidden;
+  }
+
+  @media screen and (min-width: 768px){
+    padding: 8px 108px;
+  }
 `;
